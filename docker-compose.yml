@@ -1,0 +1,9 @@
+version: "3.0"
+services:
+
+  data-structure-algorithm:
+    container_name: data-structure-algorithm
+    build: ./
+    volumes:
+        - ./:/data-structure-algorithm
+    working_dir: /data-structure-algorithm
