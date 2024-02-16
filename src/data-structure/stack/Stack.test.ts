@@ -1,4 +1,4 @@
-import Stack from "../../../src/data-structure/stack/Stack"
+import Stack from "./Stack"
 
 test("Deve adicionar um item", ()=>{
     const stack:Stack<number> = new Stack<number>();

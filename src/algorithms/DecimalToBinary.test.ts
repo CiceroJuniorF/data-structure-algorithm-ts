@@ -1,4 +1,4 @@
-import { DecimalToBinary } from "../../src/algorithms/DecimalToBinary";
+import { DecimalToBinary } from "./DecimalToBinary";
 
 test("Deve converte o numero 10 para binário 1010 usando a classe Stack", () =>{
     expect(DecimalToBinary.run(10)).toEqual("1010");
