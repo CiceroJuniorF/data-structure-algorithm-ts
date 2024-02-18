@@ -1,7 +1,7 @@
 export default class Queue<T> {
-    private items:T[]
+    private _items:T[]
     constructor(){
-        this.items = [];
+        this._items = [];
     }
     
     /**
@@ -9,14 +9,14 @@ export default class Queue<T> {
      * @param item 
      */
     public enqueue(item:T):void{
-        this.items.push(item);
+        this._items.push(item);
     }
 
     /**
      * get queue size
      */
     public size(): number {
-        return this.items.length;
+        return this._items.length;
     }
 
     /**
@@ -25,7 +25,7 @@ export default class Queue<T> {
      */
     public dequeue():T {
         if(this.isEmpty()) throw  new Error("Queue is empty");
-        return this.items.shift();
+        return this._items.shift();
     }
 
     /**
@@ -34,7 +34,7 @@ export default class Queue<T> {
      */
     public peek():T {
         if(this.isEmpty()) return;
-        return this.items[0];
+        return this._items[0];
     }
 
     /**
@@ -42,7 +42,7 @@ export default class Queue<T> {
      * @returns boolean
      */
     public isEmpty(): boolean {
-        return !this.items.length
+        return !this._items.length
     }
 
 
