@@ -29,7 +29,7 @@ export default class Queue<T> {
     }
 
     /**
-     * ge the first item in queueu 
+     * get the first item in queueu 
      * @returns T
      */
     public peek():T {
