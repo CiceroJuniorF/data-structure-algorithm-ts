@@ -7,5 +7,20 @@ describe("HotPotato", ()=>{
         const hotPotato = new HotPotato(PLAYERS, SALT);
         const result = hotPotato.start();
         expect(result.winner).toEqual("XX5");
+        expect(result.eliminated.length).toEqual(PLAYERS.length - 1);
+    });
+
+
+    test("should be the winner anyon at the load test", ()=>{
+        const PLAYERS = [];
+        for (let index = 0; index < 100; index++) {
+            const player = `XX${index}`
+            PLAYERS.push(player);
+        }
+        const SALT = 10;
+        const hotPotato = new HotPotato(PLAYERS, SALT);
+        const result = hotPotato.start();
+        expect(result.eliminated.length).toEqual(PLAYERS.length - 1);
+        expect(result.winner).not.toBeNull();
     });
 })
