@@ -1,3 +1,4 @@
+import { randomInt } from "crypto";
 import HotPotato from "./HotPotato";
 
 describe("HotPotato", ()=>{
@@ -16,7 +17,7 @@ describe("HotPotato", ()=>{
             const player = `XX${index}`
             PLAYERS.push(player);
         }
-        const SALT = 10;
+        const SALT = randomInt(10);
         const hotPotato = new HotPotato(PLAYERS, SALT);
         const result = hotPotato.start();
         expect(result.eliminated.length).toEqual(PLAYERS.length - 1);
