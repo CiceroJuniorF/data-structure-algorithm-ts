@@ -10,7 +10,6 @@ describe("HotPotato", ()=>{
         expect(result.eliminated.length).toEqual(PLAYERS.length - 1);
     });
 
-
     test("should be the winner anyon at the load test", ()=>{
         const PLAYERS = [];
         for (let index = 0; index < 100; index++) {
