@@ -60,6 +60,14 @@ export default class Deque<T> {
      * @returns boolean
      */
     public isEmpty(): boolean {
-        return !this._items.length
+        return !this.size()
+    }
+
+      /**
+     * return size deque
+     * @returns boolean
+     */
+      public size(): number {
+        return this._items.length
     }
 }
