@@ -1,4 +1,4 @@
-import Stack from "../data-structure/stack/Stack";
+import Stack from "../../data-structure/stack/Stack";
 
 export abstract class DecimalToBinary{
     public static run (decimal:number): string{
