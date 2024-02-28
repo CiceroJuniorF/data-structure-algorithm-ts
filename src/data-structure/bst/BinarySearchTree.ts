@@ -8,7 +8,6 @@ export default class BinarySearchTree<T>{
         this.root = root;
     }
 
-
     public insert(key:T, node?:Node<T>, ):void {
         if(!node){
             node = this.root;
@@ -20,5 +19,14 @@ export default class BinarySearchTree<T>{
             if(!!node.right) this.insert(key, node.right);
             else node.addRight(key);
         }
+    }
+
+    public inOrder(node:Node<T>, values:T[] = []): T[]{
+        if(node != null){
+            this.inOrder(node.left, values);
+            values.push(node.key);
+            this.inOrder(node.right, values);
+        }
+        return values;
     }
 }

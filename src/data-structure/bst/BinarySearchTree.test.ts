@@ -42,5 +42,20 @@ describe("BinarySearchTree", ()=> {
             const level_two = level_one.left
             expect(level_two.key).toEqual(2);
         });
+
+
+        test("should return in-order", ()=>{
+            const root = NodeNumber.create(10);
+            const bst = new BinarySearchTree(root);
+            bst.insert(3);
+            bst.insert(2);
+            bst.insert(5);
+            bst.insert(7);
+            bst.insert(70);
+            bst.insert(71);
+            expect(bst.inOrder(bst.root)).toEqual([2, 3, 5, 7, 10, 70 ,71]);
+        });
+
+
     });
 });
