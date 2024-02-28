@@ -43,7 +43,6 @@ describe("BinarySearchTree", ()=> {
             expect(level_two.key).toEqual(2);
         });
 
-
         test("should return in-order", ()=>{
             const root = NodeNumber.create(10);
             const bst = new BinarySearchTree(root);
