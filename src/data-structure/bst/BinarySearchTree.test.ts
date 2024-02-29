@@ -56,7 +56,7 @@ describe("BinarySearchTree", ()=> {
             expect(bst.traverse(Traverse.IN_ORDER)).toEqual([2, 3, 5, 7, 10, 70 ,71]);
         });
 
-        test("should return correct tree", ()=>{
+        test("should create correct tree", ()=>{
             const root = NodeNumber.create(10);
             const bst = new BinarySearchTree(root);
             bst.insert(3);
