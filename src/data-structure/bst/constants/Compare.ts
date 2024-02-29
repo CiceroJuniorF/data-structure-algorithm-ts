@@ -1,4 +1,4 @@
 export enum Compare {
-    LESS_THAN_EQUAL = "LESS_THAN_EQUAL",
-    GRREATER_THAN = "GRREATER_THAN"
+    LESS_THAN_EQUAL,
+    GRREATER_THAN
 }
