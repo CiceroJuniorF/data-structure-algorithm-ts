@@ -98,6 +98,18 @@ describe("BinarySearchTree", ()=> {
             expect(bst.traverse(Traverse.POST_ORDER)).toEqual([2, 7, 5, 3, 71 ,70, 10]);
         });
 
+        test("should return the height of the tree", ()=>{
+            const root = NodeNumber.create(10);
+            const bst = new BinarySearchTree(root);
+            bst.insert(3);
+            bst.insert(2);
+            bst.insert(5);
+            bst.insert(7);
+            bst.insert(70);
+            bst.insert(71);
+            expect(bst.height()).toEqual(4);
+        })
+
 
     });
 });

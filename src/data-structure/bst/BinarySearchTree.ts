@@ -3,6 +3,7 @@ import { Compare } from "./constants/Compare";
 import { Traverse } from "./constants/Traverse";
 
 export default class BinarySearchTree<T>{
+
     public readonly root: Node<T>;
 
     constructor(root: Node<T>) {
@@ -58,6 +59,18 @@ export default class BinarySearchTree<T>{
             values.push(node.key);
         }
         return values;
+    }
+
+    public height(): number {
+        return this.heightNode(this.root);
+    }
+
+    private heightNode(root: Node<T>): number {
+        if (root == null) return 0;
+        const lHeight = this.heightNode(root.left);
+        const rHeight = this.heightNode(root.right);
+        if (lHeight > rHeight) return (lHeight + 1);
+        return (rHeight + 1);
     }
 
 }
