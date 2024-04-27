@@ -6,3 +6,5 @@
 #### O(a + b) or O(a * b) 
 ## 4 - Drop non Dominants
 #### O(n + n ^ 2) -> O(n ^ 2)
+
+[text](https://www.bigocheatsheet.com/)
