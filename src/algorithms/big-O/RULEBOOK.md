@@ -7,4 +7,4 @@
 ## 4 - Drop non Dominants
 #### O(n + n ^ 2) -> O(n ^ 2)
 
-[text](https://www.bigocheatsheet.com/)
+[BigO Cheat Sheet](https://www.bigocheatsheet.com/)
