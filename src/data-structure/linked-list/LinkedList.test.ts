@@ -47,6 +47,19 @@ describe("LinkedList", ()=>{
             expect(()=>{linkedList.insert(100, 1000)}).toThrow("Index out of range");
 
         });
+
+        test("should return reverse", ()=>{
+            const linkedList = new LinkedList<number>();
+            linkedList.push(1); // 0 
+            linkedList.push(2); // 1
+            linkedList.push(3); // 2
+            linkedList.push(4); // 2
+            linkedList.reverse();
+            expect(linkedList.head.value).toEqual(4);
+            expect(linkedList.head.next.value).toEqual(3);
+            expect(linkedList.head.next.next.value).toEqual(2);
+            expect(linkedList.head.next.next.next.value).toEqual(1);
+        });
     });
 
 
