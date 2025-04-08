@@ -67,5 +67,41 @@ export default class DoublyLinkedList<T> {
         }
         this.count++;
     }
+    /**
+     * ! Explain 1, 2, 3, 4
+     * * previous<->next
+     * 
+     * 
+     * 1 <-> 2 <-> 3 <-> 4
+     * head = 1
+     * tail = 4
+     * 
+     * * Invert tail to node
+     * tail = 1
+     * head = 4
+     * 
+     * *First loop
+     * 4 <-> 3
+     * 1 <-> 2 <-> 3
+     * 
+     * *Second loop
+     * 4 <-> 3 <-> 2
+     * 1 <-> 2
+     * 
+     * *Third loop
+     * 4 <-> 3 <-> 2 <-> 1
+     */
+    reverse(): void {
+        const temp = this.head
+        this.head = this.tail
+        this.tail = temp
+        let nodo = this.head
+        while(nodo){
+            const temp2 = nodo.next
+            nodo.next = nodo.previous
+            nodo.previous = temp2
+            nodo = nodo.next
+        }
+    }
 
 }

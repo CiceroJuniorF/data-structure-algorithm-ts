@@ -1,8 +1,8 @@
 import DoublyLinkedList from "./DoublyLinkedList";
 
-describe("DoublyLinkedList", ()=>{
-    describe("DoublyLinkedListNumber", ()=>{
-        test("should create a linked list with numbers", ()=>{
+describe("DoublyLinkedList", () => {
+    describe("DoublyLinkedListNumber", () => {
+        test("should create a linked list with numbers", () => {
             const linkedList = new DoublyLinkedList<number>();
             linkedList.push(1);
             linkedList.push(2);
@@ -17,7 +17,7 @@ describe("DoublyLinkedList", ()=>{
             expect(linkedList.tail.value).toBe(3);
         });
 
-        test("should remove element by index", ()=>{
+        test("should remove element by index", () => {
             const linkedList = new DoublyLinkedList<number>();
             linkedList.push(1); // 0 
             linkedList.push(2); // 1
@@ -30,7 +30,7 @@ describe("DoublyLinkedList", ()=>{
             expect(linkedList.head).toBe(linkedList.tail)
         });
 
-        test("should add element by index", ()=>{
+        test("should add element by index", () => {
             const linkedList = new DoublyLinkedList<number>();
             linkedList.push(1); // 0 
             linkedList.push(2); // 1
@@ -47,8 +47,21 @@ describe("DoublyLinkedList", ()=>{
             expect(linkedList.head.next.next.value).toBe(3);
             expect(linkedList.head.next.next.next.value).toBe(100);
             expect(linkedList.head.next.next.next.next.value).toBe(1); // tail [1, 2, 3, 100, 1]
-            expect(()=>{linkedList.insert(100, 1000)}).toThrow("Index out of range");
+            expect(() => { linkedList.insert(100, 1000) }).toThrow("Index out of range");
 
+        });
+
+        test("should return reverse", () => {
+            const linkedList = new DoublyLinkedList<number>();
+            linkedList.push(1); // 0 
+            linkedList.push(2); // 1
+            linkedList.push(3); // 2
+            linkedList.push(4); // 2
+            linkedList.reverse();
+            expect(linkedList.head.value).toEqual(4);
+            expect(linkedList.head.next.value).toEqual(3);
+            expect(linkedList.head.next.next.value).toEqual(2);
+            expect(linkedList.head.next.next.next.value).toEqual(1);
         });
     });
 
